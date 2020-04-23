@@ -2,16 +2,16 @@ const electron = require("electron");
 const url = require("url");
 const path = require("path");
 
-const { app, BrowserWindow, Menu } = electron;
+const { app, BrowserWindow, Menu, ipcMain } = electron;
 
 let mainWindow;
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        'minHeight': 768,
-        'minWidth': 1024
-
-    });
+        webPreferences: {
+                nodeIntegration: true
+              }
+        });
 
     console.log(process.platform);
 
@@ -26,6 +26,16 @@ app.on('ready', () => {
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 
     Menu.setApplicationMenu(mainMenu);
+
+    ipcMain.on("key",(err,data)=>{
+        console.log(data);
+
+    })
+
+
+
+
+
 })
 
 
