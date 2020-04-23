@@ -7,7 +7,11 @@ const { app, BrowserWindow, Menu } = electron;
 let mainWindow;
 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({
+        'minHeight': 768,
+        'minWidth': 1024
+
+    });
 
     console.log(process.platform);
 
