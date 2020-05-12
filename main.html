@@ -68,12 +68,13 @@
 
   </div>
 </div>
-<div class="container">
+<div class="home">
   <div class="row">
 
     <div class="col-md-3"></div>
-    <div class="mr-2 ml-2">
+    <div class="col mr-2 ml-2 w-100">
       <textarea name="DSC" id="editor" id="value" onkeyup="keyuptest();" style="min-height: 200px !important;"></textarea>
+
       <button class="btn btn-primary ml-auto mt-2" id="sendButton">Send it</button>
 
     </div>
@@ -114,6 +115,9 @@
   ClassicEditor
   .create( document.querySelector( '#editor' ) )
   .then( editor => {
+    myEditor = editor;
+
+
 
     editor.editing.view.document.on( 'keydown', ( evt, data ) => {
       console.log( data );
@@ -132,7 +136,6 @@
 
 
     console.log( editor );
-    myEditor = editor;
 
 
   } )
@@ -153,5 +156,17 @@
 
 
   </script>
+  <style>
+    .ck.ck-editor{
+      height: 85vh;
+    }
+    .ck.ck-editor__main {
+      height: 96%;
+    }
+    .ck.ck-content{
+      height: 96%;
+    }
+  </style>
+
 </body>
 </html>
