@@ -80,8 +80,6 @@
   </div>
 </div>
 
-<input type="text"  name="tst" class="form-control" id="input1" onkeyup="keyuptest();" >
-
 
 <script>
   const ClassicEditor = require( '@ckeditor/ckeditor5-build-classic' );
@@ -150,18 +148,7 @@
       inputValue.value = "";
     });
 
-     $(document).ready(function(){
-      $("editor").keyup(function(){
-        $("textarea").css("background-color", "pink");
-        alert("test");
-      });
-    });
-
-     function keyuptest(){
-      alert("test");
-    }
-
-
+    
 
   </script>
 </body>
