@@ -120,10 +120,13 @@
 
       if ( data.keyCode == 9 ) {
         console.log( 'TAB!!' );
-
+        editor.execute( 'bold' );
         data.preventDefault();
         evt.stop();
       }
+
+
+
     } );
 
 
@@ -145,10 +148,9 @@
      //let inputValue = document.getElementById("deger").value;
      sendBtn.addEventListener("click", () => {
       ipcRenderer.send("key", myEditor.getData());
-      inputValue.value = "";
     });
 
-    
+
 
   </script>
 </body>
