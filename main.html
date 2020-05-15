@@ -86,8 +86,27 @@
   const ClassicEditor = require( '@ckeditor/ckeditor5-build-classic' );
   var myEditor;
 
-
   ClassicEditor.defaultConfig = {
+    heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                {
+                    model: 'headingFancy',
+                    view: {
+                        name: 'h2',
+                        classes: 'fancy'
+                    },
+                    title: 'Heading 2 (fancy)',
+                    class: 'ck-heading_heading2_fancy',
+
+                    // It needs to be converted before the standard 'heading2'.
+                    converterPriority: 'high'
+                }
+            ]
+        },
+    
     toolbar: {
       items: [
       'heading',
@@ -95,7 +114,6 @@
       'bold',
       'italic',
       'link',
-
       'blockQuote',
       'undo',
       'redo'
@@ -167,6 +185,14 @@
       height: 96%;
     }
   </style>
+
+  <style>
+
+    h2.fancy, .ck-heading_heading2_fancy {
+        color: #ff0050;
+        font-size: 17px;
+    }
+</style>
 
 </body>
 </html>
