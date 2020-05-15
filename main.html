@@ -71,13 +71,14 @@
 <div class="home">
   <div class="row">
 
-    <div class="col-md-3"></div>
-    <div class="col mr-2 ml-2 w-100">
+    
+    <div class="col mr-2 ml-2 w-100 col-md-9 ">
       <textarea name="DSC" id="editor" id="value" onkeyup="keyuptest();" style="min-height: 200px !important;"></textarea>
 
       <button class="btn btn-primary ml-auto mt-2" id="sendButton">Send it</button>
 
     </div>
+    <div class="col-md-3"></div>
   </div>
 </div>
 
@@ -89,19 +90,14 @@
   ClassicEditor.defaultConfig = {
     heading: {
             options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
                 {
-                    model: 'headingFancy',
+                    model: 'paragraph',
                     view: {
-                        name: 'h2',
-                        classes: 'fancy'
+                        name: 'p',
+                        classes: 'action'
                     },
-                    title: 'Heading 2 (fancy)',
-                    class: 'ck-heading_heading2_fancy',
-
-                    // It needs to be converted before the standard 'heading2'.
+                    title: 'Aksiyon',
+                    class: 'ck-action',
                     converterPriority: 'high'
                 }
             ]
@@ -188,9 +184,10 @@
 
   <style>
 
-    h2.fancy, .ck-heading_heading2_fancy {
-        color: #ff0050;
-        font-size: 17px;
+    p.action, .ck-action {
+        color: black;
+        font-size: 12px;
+        font-family: monospace
     }
 </style>
 
